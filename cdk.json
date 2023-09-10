@@ -52,6 +52,18 @@
     "@aws-cdk/aws-kms:aliasNameRef": true,
     "@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig": true,
     "@aws-cdk/core:includePrefixInUniqueNameGeneration": true,
-    "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": true
+    "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": true,
+    "dev":{
+      "env": {
+        "account": "0000000000",
+        "region": "ap-northeast-1"
+      }
+    },
+    "prd": {
+      "env": {
+        "account": "111111111",
+        "region": "ap-northeast-1"
+      }
+    }
   }
 }
