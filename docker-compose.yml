@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    tty: true
+    build:
+      context: .devcontainer
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspaces/cdkstudy:cached
+      - node_modules-volume:/workspaces/cdkstudy/node_modules
+volumes:
+  node_modules-volume:
