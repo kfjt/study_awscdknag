@@ -1,3 +1,4 @@
+import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import * as kms from "aws-cdk-lib/aws-kms";
@@ -29,5 +30,9 @@ export class MyS3 extends Construct {
     });
     // public
     this.appBucket = appBucket;
+    new cdk.CfnOutput(this, "AppBucketArn", {
+      value: appBucket.bucketArn,
+      exportName: "AppBucketArn",
+    });
   }
 }
