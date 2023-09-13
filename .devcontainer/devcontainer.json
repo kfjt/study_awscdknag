@@ -8,6 +8,7 @@
 	"service": "app",
 	"shutdownAction": "none",
 	"workspaceFolder": "/workspaces/cdkstudy",
+	"postCreateCommand": "cdklocal bootstrap",
 	"customizations": {
 		"vscode": {
 			"extensions": [

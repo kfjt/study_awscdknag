@@ -9,5 +9,20 @@ services:
     volumes:
       - .:/workspaces/cdkstudy:cached
       - node_modules-volume:/workspaces/cdkstudy/node_modules
+    environment:
+      - LOCALSTACK_HOSTNAME=localstack_main
+      - AWS_DEFAULT_REGION=ap-northeast-1
+  localstack:
+    container_name: localstack_main
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566" # LocalStack Gateway
+      - "127.0.0.1:4510-4559:4510-4559" # external services port range
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - localstack-volume:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   node_modules-volume:
+  localstack-volume:
